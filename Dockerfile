@@ -25,7 +25,7 @@ WORKDIR /var/www/html
 COPY . .
 
 # Установка зависимостей
-RUN composer install --no-dev --optimize-autoloader --no-interaction
+RUN composer install --no-dev --optimize-autoloader --no-interaction --no-scripts
 
 # Права на папки
 RUN chown -R www-data:www-data /var/www/html \
