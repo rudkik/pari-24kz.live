@@ -44,6 +44,7 @@
     <meta name="format-detection" content="email=no">
     <script defer src="/js/app.min.js?_v=20230904172117"></script>
     <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
 <style>
