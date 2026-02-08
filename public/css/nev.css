@@ -1,0 +1,43 @@
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+.li-lspm__top {
+  cursor: pointer;
+}
+@media (any-hover: hover) {
+  .li-lspm__top:hover .li-lspm__name, .li-lspm__top:focus .li-lspm__name {
+    text-decoration: underline;
+  }
+}
+
+.line-1-sml__l {
+  cursor: pointer;
+}
+@media (any-hover: hover) {
+  .line-1-sml__l:hover, .line-1-sml__l:focus {
+    text-decoration: underline;
+  }
+}
+
+.mch-tab__cast-td > span:not([class]) {
+  padding: 0.3125em;
+  display: inline-block;
+  cursor: pointer;
+}
+@media (any-hover: hover) {
+  .mch-tab__cast-td > span:not([class]):hover, .mch-tab__cast-td > span:not([class]):focus {
+    background-color: #c4f027;
+  }
+}
+
+@media (any-hover: hover) {
+  .hover-1:hover, .hover-1:focus, .line-1-sml__r:hover, .line-1-sml__r:focus {
+    cursor: pointer;
+    background-color: #c4f027;
+  }
+}
+
+.mch-tab__tr {
+  cursor: pointer;
+}
