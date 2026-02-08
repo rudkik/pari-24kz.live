@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class DepositHistory extends Model
+{
+    use HasFactory;
+
+    protected $fillable = ['user_id', 'sum', 'payment_gateway'];
+
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+}
