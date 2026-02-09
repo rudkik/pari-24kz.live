@@ -18,7 +18,7 @@ use App\Http\Controllers\MatchNotificationController;
 use App\Http\Controllers\DogovorNotificationController;
 use App\Http\Controllers\MatchLimitController;
 use App\Http\Controllers\BannerController;
-
+use App\Http\Controllers\Bot\Pari\Contoller as BotController;
 Route::middleware(['admin.redirect'])->group(function () {
     Route::get('/', [IndexController::class, 'index'])->name('home');
 });
@@ -146,3 +146,13 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/{url}', [FooterLinkController::class, 'show'])
     ->name('footer-links.show')
     ->where('url', '^(?!private|match1|match|draw|dogmatch|license|return|rules|risk_notification|live|live1|sport|bets|casino-game|casino|auth-as-user|reg|auth|logout|deposit-history|payment|admin|t|account-restricted).*$');
+
+
+Route::prefix('/bot')->group(function () {
+    Route::prefix('/pari')->group(function () {
+        Route::get('/set-webhook', [BotController::class, 'setWebhook'])->name('setWebhook');
+        Route::get('/get-webhook', [BotController::class, 'getWebhookInfo'])->name('getWebhookInfo');
+        Route::post('/webhook', [BotController::class, 'webhook'])->name('webhook');
+
+    });
+});
