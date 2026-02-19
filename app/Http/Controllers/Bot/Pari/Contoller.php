@@ -57,9 +57,10 @@ class Contoller extends Controller
 
             if ($message == '/start') {
                 $message = 'Жми «СТАРТ» чтобы запустить приложение!';
+                $telegramServices->sendMessage(self::url . $this->token, $chat_id, $message, $buttons);
             }
 
-            $telegramServices->sendMessage(self::url . $this->token, $chat_id, $message, $buttons);
+
 
         }
         else {
